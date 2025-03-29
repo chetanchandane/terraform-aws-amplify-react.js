@@ -6,6 +6,11 @@ terraform {
       version = "~> 5.0"
     }
   }
+    backend "s3" {
+    bucket         = var.backend_bucket
+    key            = "${var.app_name}/terraform.tfstate"
+    region         = var.region    
+  }
 }
 
 # Configure the AWS Provider

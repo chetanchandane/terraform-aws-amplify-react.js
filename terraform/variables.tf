@@ -8,13 +8,13 @@ variable "app_name" {
 variable "github_repo" {
     type = string
     description = "The GitHub repository URL"
-    default = "value"
+    default = "https://github.com/chetanchandane/terraform-aws-amplify-react.js"
 }
 
 variable "branch_name" {
     type = string
     description = "The branch name to deploy"
-    default = "master"
+    default = "main"
 }
 
 variable "github_token" {
@@ -28,4 +28,10 @@ variable "stage_name" {
     description = "The stage name for the API Gateway"
     default = "dev"
   
+}
+
+variable "backend_bucket" {
+    type = string
+    description = "The S3 bucket for the backend"
+    default = "your-backend-bucket"
 }
