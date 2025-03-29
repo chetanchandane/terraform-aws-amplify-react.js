@@ -8,7 +8,13 @@ resource "aws_cognito_user_pool_client" "user_pool_client" {
   user_pool_id = aws_cognito_user_pool.user_pool.id
   generate_secret = false
   allowed_oauth_flows_user_pool_client = true
-  explicit_auth_flows = ["ALLOW_USER_PASSWORD_AUTH", "ALLOW_REFRESH_TOKEN_AUTH"]
+  allowed_oauth_flows = ["code", "implicit"]
+  allowed_oauth_scopes = [
+  "email", 
+  "openid", 
+  "aws.cognito.signin.user.admin"]
+  callback_urls = ["https://example.com/callback"]
+  logout_urls   = ["https://example.com/logout"]
 }
 
 resource "aws_cognito_identity_pool" "identity_pool" {

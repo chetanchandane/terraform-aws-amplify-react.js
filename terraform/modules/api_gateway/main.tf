@@ -32,7 +32,7 @@ resource "aws_api_gateway_integration" "lambda_integration" {
 
   integration_http_method = "POST"
   type                    = "AWS_PROXY"
-  uri                     = var.lambda_arn
+  uri                     = "${var.lambda_arn}/invocations"
 }
 
 resource "aws_lambda_permission" "api_gateway" {
