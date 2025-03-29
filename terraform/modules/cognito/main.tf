@@ -21,3 +21,18 @@ resource "aws_cognito_identity_pool" "identity_pool" {
     server_side_token_check = false
   }
 }
+
+resource "aws_cognito_user" "demo_user" {
+  user_pool_id = aws_cognito_user_pool.user_pool.id
+  username     = "testuser"
+
+  attributes = {
+    email          = "testuser@example.com"
+    email_verified = "true"
+  }
+
+  temporary_password     = "TestPassword123!"
+  message_action         = "SUPPRESS"
+  force_alias_creation   = false
+}
+
