@@ -7,9 +7,9 @@ terraform {
     }
   }
     backend "s3" {
-    bucket         = var.backend_bucket
-    key            = "${var.app_name}/terraform.tfstate"
-    region         = var.region    
+    bucket         = "my-react-app-backend-bucket"
+    key            = "terraform.tfstate"
+    region         = "us-east-1"  
   }
 }
 

@@ -20,8 +20,6 @@ variable "branch_name" {
 variable "github_token" {
     type = string
     description = "The GitHub token for authentication"
-    default = "value"
-  
 }
 variable "stage_name" {
     type = string
@@ -30,8 +28,3 @@ variable "stage_name" {
   
 }
 
-variable "backend_bucket" {
-    type = string
-    description = "The S3 bucket for the backend"
-    default = "my-react-app-backend-bucket"
-}
