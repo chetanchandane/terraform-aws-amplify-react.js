@@ -33,5 +33,5 @@ variable "stage_name" {
 variable "backend_bucket" {
     type = string
     description = "The S3 bucket for the backend"
-    default = "your-backend-bucket"
+    default = "my-react-app-backend-bucket"
 }
