@@ -51,5 +51,5 @@ resource "aws_api_gateway_deployment" "deployment" {
 resource "aws_api_gateway_stage" "example" {
   deployment_id = aws_api_gateway_deployment.deployment.id
   rest_api_id   = aws_api_gateway_rest_api.api.id
-  stage_name    = "prod"
+  stage_name    = var.stage_name
 }

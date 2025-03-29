@@ -23,6 +23,6 @@ resource "aws_lambda_function" "hello_world" {
   role          = aws_iam_role.lambda_exec_role.arn
   handler       = "index.handler"
   runtime       = "nodejs18.x"
-  filename      = "lambda/hello.zip"
-  source_code_hash = filebase64sha256("lambda/hello.zip")
+  filename      = "${path.root}/lambda_function.zip"
+  source_code_hash = filebase64sha256("${path.root}/lambda_function.zip")
 }
