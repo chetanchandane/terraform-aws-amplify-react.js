@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Amplify } from 'aws-amplify';
 import awsconfig from './aws-exports';
-import { Auth, signIn, fetchAuthSession } from 'aws-amplify/auth';
+import { signIn, fetchAuthSession } from 'aws-amplify/auth';
 
 Amplify.configure(awsconfig);
 
@@ -13,6 +13,9 @@ function App() {
       const user = await signIn({ username: 'testuser', password: 'TestPassword123!'});
       const session = await fetchAuthSession();
       const token = session.tokens?.idToken?.toString();
+
+      console.log("JWT:", token);
+      console.log("calling API: ",`${process.env.REACT_APP_API_BASE_URL}/hello`);
 
       const res = await fetch(`${process.env.REACT_APP_API_BASE_URL}/hello`, {
         headers: {
