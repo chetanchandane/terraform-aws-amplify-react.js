@@ -26,6 +26,7 @@ module "api_gateway" {
   lambda_arn  = module.lambda.lambda_arn
   cognito_user_pool_arn = module.cognito.user_pool_arn
   stage_name = var.stage_name
+  region    = var.region
 }
 
 module "amplify" {

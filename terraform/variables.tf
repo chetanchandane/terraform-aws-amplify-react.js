@@ -28,3 +28,9 @@ variable "stage_name" {
   
 }
 
+variable "region" {
+    type = string
+    description = "The AWS region to deploy the resources"
+    default = "us-east-1"
+  
+}

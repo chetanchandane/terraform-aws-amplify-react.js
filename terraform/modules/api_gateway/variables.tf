@@ -13,3 +13,6 @@ variable "cognito_user_pool_arn" {
 variable "stage_name" {
   
 }
+
+variable "region" {
+}
