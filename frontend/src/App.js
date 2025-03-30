@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Amplify, Auth } from 'aws-amplify';
+import { Amplify } from 'aws-amplify';
+import { signIn, fetchAuthSession } from 'aws-amplify/auth';
 
 Amplify.configure({
   Auth: {
@@ -14,9 +15,9 @@ function App() {
 
   const loginAndCallAPI = async () => {
     try {
-      const user = await Auth.signIn('testuser', 'TestPassword123!');
-      const session = await Auth.currentSession();
-      const token = session.getIdToken().getJwtToken();
+      const user = await signIn({ username: 'testuser', password: 'TestPassword123!'});
+      const session = await fetchAuthSession();
+      const token = session.tokens?.idToken?.toString();
 
       const res = await fetch(`${process.env.REACT_APP_API_BASE_URL}/hello`, {
         headers: {
