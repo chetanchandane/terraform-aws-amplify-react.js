@@ -6,15 +6,15 @@ output "amplify_app_url" {
 # cognito
 
 output "cognito_user_pool_id" {
-  value = module.cognito.user_pool_id
+  value = module.cognito.cognito_user_pool_id
 }
 
 output "cognito_user_pool_client_id" {
-  value = module.cognito.user_pool_client_id
+  value = module.cognito.cognito_user_pool_client_id
 }
 
-output "identity_pool_id" {
-  value = module.cognito.identity_pool_id
+output "cognito_identity_pool_id" {
+  value = module.cognito.cognito_identity_pool_id
 }
 
 # API Endpoint
