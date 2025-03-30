@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
 import { Amplify } from 'aws-amplify';
+import awsconfig from './aws-exports';
 import { signIn, fetchAuthSession } from 'aws-amplify/auth';
 
-Amplify.configure({
-  Auth: {
-    region: 'us-east-1',
-    userPoolId: process.env.REACT_APP_USER_POOL_ID,
-    userPoolWebClientId: process.env.REACT_APP_USER_POOL_CLIENT_ID,
-  }
+Amplify.configure(awsconfig, {
+  modules: [Auth]
 });
 
 function App() {
