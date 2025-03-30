@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import { Amplify } from 'aws-amplify';
 import awsconfig from './aws-exports';
-import { signIn, fetchAuthSession } from 'aws-amplify/auth';
+import { Auth, signIn, fetchAuthSession } from 'aws-amplify/auth';
 
-Amplify.configure(awsconfig, {
-  modules: [Auth]
-});
+Amplify.configure(awsconfig);
 
 function App() {
   const [message, setMessage] = useState('');
