@@ -36,7 +36,7 @@ module "amplify" {
     github_token = var.github_token
     branch_name  = var.branch_name
     
-    user_pool_id        = module.cognito.cognito_identity_pool_id
+    user_pool_id        = module.cognito.cognito_user_pool_id
     user_pool_client_id = module.cognito.cognito_user_pool_client_id
     identity_pool_id    = module.cognito.cognito_identity_pool_id
     api_gateway_url     = module.api_gateway.api_url
