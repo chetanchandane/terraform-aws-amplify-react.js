@@ -34,8 +34,8 @@ function App() {
   return (
     <div>
       <h1>Amplify + Cognito + API Gateway Demo</h1>
-      <button onClick={loginAndCallAPI}>Login & Fetch</button>
-      <p>{message}</p>
+      {/* <button onClick={loginAndCallAPI}>Login & Fetch</button>
+      <p>{message}</p> */}
     </div>
   );
 }
